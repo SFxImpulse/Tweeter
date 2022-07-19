@@ -1,0 +1,9 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #6DADE1;
+  background-image: url('../images/swirl.png');
+  padding-top: 6em;
+}
