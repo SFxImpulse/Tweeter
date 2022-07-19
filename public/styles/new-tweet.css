@@ -1,0 +1,33 @@
+form {
+  width: 70%;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-text {
+  background-color: #f4f1ec;
+  border: transparent;
+  border-bottom: 5px solid black;
+  resize: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 45px;
+}
+
+.form-submission {
+  font-family: 'Bungee';
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  color: #FFFFFF;
+  background-color: #4056A1;
+}
+
+.counter {
+  font-family: 'Bungee';
+  display: flex;
+  justify-content: space-around;
+}
