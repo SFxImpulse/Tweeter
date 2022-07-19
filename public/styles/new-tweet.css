@@ -31,3 +31,7 @@ button {
   display: flex;
   justify-content: space-around;
 }
+
+.negative {
+  color: red;
+}
