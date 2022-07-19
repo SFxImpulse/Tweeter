@@ -3,7 +3,8 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #6DADE1;
-  background-image: url('../images/swirl.png');
+  color: #FFFFFF;
+  background-color: #5fdb2e;
+  background-image: url('../images/black-orchid.png');
   padding-top: 6em;
 }
