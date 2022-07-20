@@ -16,7 +16,7 @@ nav span {
   font-family: 'Bungee';
 }
 
-.fa-solid {
+nav .fa-solid {
   display: flex;
   color: red;
   padding-left: 75px;
