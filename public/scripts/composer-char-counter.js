@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $('#tweet-text').on('input', function() {
     let count = 140 - $(this).val().length;
     let counter = $(this).siblings(".form-submission").children('.counter');

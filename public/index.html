@@ -21,6 +21,7 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -53,7 +54,10 @@
     <!-- Tweeting form and container -->
     <main class="container">
       <section class="new-tweet">
-        <form method="POST" action="/tweets/">
+        <div>
+          <p class="error" style="display: none"></p>
+        </div>
+        <form id="tweet-form" method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="form-submission">
@@ -64,23 +68,6 @@
       </section>
       <!-- Tweets -->
       <section class="tweets">
-        <article class="tweet">
-          <header>
-            <span><img src="/images/bird.png">Blue-Footed Boobie</span>
-            <section>@bluebird</section>
-          </header>
-          <p>
-            Caught a big fish today!
-          </p>
-          <footer>
-            <span>10 days ago</span>
-            <div>
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-arrow-rotate-left"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
       </section>
     </main>
   </body>
