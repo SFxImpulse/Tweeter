@@ -15,7 +15,7 @@ const escape = function (str) {
 // Creates a tweet HTML and appends it to the body
 
 const createTweetElement = function(tweetObj) {
-  const safeHTML = `<p>${escape(tweetObj.content.text)}`
+  const safeHTML = `<p>${escape(tweetObj.content.text)}`;
   let $tweet = `
   <article class="tweet">
     <header>
@@ -36,6 +36,8 @@ const createTweetElement = function(tweetObj) {
   return $tweet;
 };
 
+// Renders the created HTML tweet markup to the /tweets/ URL. 
+
 const renderTweets = function(tweetsArr) {
   $('.tweets').empty();
   for (let tweet = tweetsArr.length - 1; tweet >= 0; tweet--) {
@@ -43,17 +45,11 @@ const renderTweets = function(tweetsArr) {
   }
 };
 
-// const errorCheck = function (string) {
-//   if (string === '') {
-//     $('.error').text("Your tweet is empty, please add some text before tweeting.");
-//     $('.error').slideDown();
-//   } else if (string.length > 140) {
-//     $('.error').text("Your tweet is too long, please respect the totally nonsensical character limit.");
-//     $('.error').slideDown();
-//   }
-// }
+// Displays these elements after the website has finished loading.
 
 $(document).ready(function () {
+
+  // Loads tweets from /tweets/ and renders them as tweets on the website.
 
   const loadTweets = function() {
     $.get("/tweets/", function(data) {
@@ -70,15 +66,21 @@ $(document).ready(function () {
 
     // $('.scrollButton').click(function () {
     //   window.scrollTo(0, 1);
-    // })
+    // });
 
-    let newTweetValue = $('#tweet-text').val();
+    const newTweetValue = $('#tweet-text').val();
 
     const newTweet = $newTweet.serialize();
 
+    // Resets the text area after a tweet has been posted.
+
     $('#tweet-form')[0].reset();
+
+    // Hides the error html until needed.
     
     $('.error').hide();
+
+    // Conditionals to check for empty text area and a text area with over 140 characters.
 
     if (newTweetValue === '') {
       $('.error').text("Your tweet is empty, please add some text before tweeting.");
@@ -87,10 +89,15 @@ $(document).ready(function () {
       $('.error').text("Your tweet is too long, please respect the totally nonsensical character limit.");
       $('.error').slideDown();
     } else {
+
+      // Loads tweets after checking for errors.
+
       $.post('/tweets/', newTweet)
         .then(loadTweets())
     }
   });
+
+  // Loads tweets without needing to submit.
 
   loadTweets();
 
