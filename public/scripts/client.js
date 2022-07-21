@@ -36,7 +36,7 @@ const createTweetElement = function(tweetObj) {
   return $tweet;
 };
 
-// Renders the created HTML tweet markup to the /tweets/ URL. 
+// Renders the created HTML tweet markup to the /tweets URL. 
 
 const renderTweets = function(tweetsArr) {
   $('.tweets').empty();
@@ -45,17 +45,21 @@ const renderTweets = function(tweetsArr) {
   }
 };
 
+  // Loads tweets from /tweets and renders them as tweets on the website.
+
+const loadTweets = function() {
+  $.get("/tweets", function(data) {
+    renderTweets(data);
+  });
+};
+
 // Displays these elements after the website has finished loading.
 
 $(document).ready(function () {
 
-  // Loads tweets from /tweets/ and renders them as tweets on the website.
+    // Loads tweets without needing to submit.
 
-  const loadTweets = function() {
-    $.get("/tweets/", function(data) {
-      renderTweets(data);
-    });
-  };
+  loadTweets();
 
   const $newTweet = $('#tweet-form');
 
@@ -92,13 +96,17 @@ $(document).ready(function () {
 
       // Loads tweets after checking for errors.
 
-      $.post('/tweets/', newTweet)
-        .then(loadTweets())
+      $.ajax({
+        url: '/tweets',
+        type: "post",
+        data: newTweet,
+        success: function (data, res) {
+          loadTweets();
+        },
+        error: function (jqXHRObj, res) {
+          console.log(res);
+        }
+      });
     }
   });
-
-  // Loads tweets without needing to submit.
-
-  loadTweets();
-
 });
