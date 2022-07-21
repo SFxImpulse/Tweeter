@@ -25,7 +25,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-/* New tweet container styling */
+/* Styling for main tweet body */
 
 .container {
   width: 95%;
@@ -33,7 +33,7 @@ body {
   background-color: #f4f1ec;
 }
 
-/* Error styling */
+/* Styling for error messages */
 
 .error {
   width: 90%;
@@ -45,6 +45,8 @@ body {
   background-color: #f4f1ec;
   border: 3px dotted #9c170e;
 }
+
+/* Styling for tweets */
 
 article.tweet {
   width: 100%;
@@ -106,6 +108,10 @@ article.tweet footer .fa-solid:hover {
   color: #89d99a;
 }
 
+/* Additional screen-size styling */
+
+/* Tablet styling */
+
 @media screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -120,6 +126,8 @@ article.tweet footer .fa-solid:hover {
     box-shadow: 10px 10px #89d99a;
   }
 }
+
+/* Desktop and Laptop styling */
 
 @media screen and (min-width: 1024px) {
   .container {
