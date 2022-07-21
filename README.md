@@ -6,9 +6,19 @@ Hello! Welcome and thank you for downloading my Twitter clone, Tweeter!
 
 This is a pure learning experience and educational project, as well as my first foray into creating a website with jQuery and Ajax.
 
-This simple clone takes from an array of premade users, handles, and creates a tweet from the text you typed from text-input field!
+!["Screenshot of desktop and laptop view"](./screenshots/screenShot1.png)
+
+This simple clone takes from an array of premade users, handles, and creates a tweet from the text you typed from the text-input field!
+
+!["Screenshot of a tweet being composed"](./screenshots/screenShot4.png)
+
+## Additional Features
 
 Comes with full mobile and tablet support!
+
+!["Screenshot of tablet view"](./screenshots/screenShot2.png)
+
+!["Screenshot of phone view"](./screenshots/screenShot3.png)
 
 ## Getting Started
 
