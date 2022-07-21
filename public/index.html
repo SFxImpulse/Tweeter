@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <!-- Standard mobile view; removed zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -34,13 +38,15 @@
       <span>tweeter</span>
       <section>
         <strong>Write</strong> a new tweet
-        <i class="fa-solid fa-angles-down"></i> 
+        <button class="scrollButton">
+          <i class="fa-solid fa-angles-down" type="button"></i>
+        </button>
       </section>
     </nav>
 
     <!-- Header -->
     <div>
-      <header>
+      <header class="header">
         <div>
           <img src="/images/profile-hex.png">
         </div>
@@ -61,7 +67,7 @@
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="form-submission">
-            <button type="submit">Tweet</button>
+            <button class="button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>

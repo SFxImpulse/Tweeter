@@ -25,11 +25,15 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+/* New tweet container styling */
+
 .container {
-  width: 90%;
+  width: 95%;
   margin: 1em auto;
   background-color: #f4f1ec;
 }
+
+/* Error styling */
 
 .error {
   width: 90%;
@@ -43,15 +47,15 @@ body {
 }
 
 article.tweet {
-  width: 77.5%;
+  width: 100%;
   margin: 2em auto;
-  border: 3px solid #545149;
+  border: none;
   padding: 0.5em 1em;
   transition: box-shadow .3s;
 }
 
 article.tweet:hover {
-  box-shadow: 10px 10px #89d99a;
+  box-shadow: 0px 0px 15px #89d99a;
 }
 
 article.tweet header {
@@ -84,7 +88,7 @@ article.tweet p {
 article.tweet footer {
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 16px;
   padding-bottom: 0.5em;
 }
 
@@ -99,5 +103,28 @@ article.tweet footer .fa-solid {
 }
 
 article.tweet footer .fa-solid:hover {
-  color: #65b1cf;
+  color: #89d99a;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  
+  article.tweet {
+    width: 90%;
+    border: 3px solid #545149;
+    transition: box-shadow .3s;
+  }
+  article.tweet:hover {
+    box-shadow: 10px 10px #89d99a;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 66.7%;
+    float: right;
+    padding-top: 4em;
+  }
 }

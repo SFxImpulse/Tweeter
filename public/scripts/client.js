@@ -4,11 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Removes unwanted code from being posted as tweets.
+
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
+
+// Creates a tweet HTML and appends it to the body
 
 const createTweetElement = function(tweetObj) {
   const safeHTML = `<p>${escape(tweetObj.content.text)}`
@@ -39,34 +43,52 @@ const renderTweets = function(tweetsArr) {
   }
 };
 
-const loadTweets = function() {
-  $.get("/tweets/", function(data) {
-    renderTweets(data);
-  });
-};
+// const errorCheck = function (string) {
+//   if (string === '') {
+//     $('.error').text("Your tweet is empty, please add some text before tweeting.");
+//     $('.error').slideDown();
+//   } else if (string.length > 140) {
+//     $('.error').text("Your tweet is too long, please respect the totally nonsensical character limit.");
+//     $('.error').slideDown();
+//   }
+// }
 
 $(document).ready(function () {
+
+  const loadTweets = function() {
+    $.get("/tweets/", function(data) {
+      renderTweets(data);
+    });
+  };
 
   const $newTweet = $('#tweet-form');
 
   $newTweet.submit(function(event) {
     event.preventDefault();
 
-    const newTweetValue = $('#tweet-text').val();
+    // My attempt at scroll button code.
+
+    // $('.scrollButton').click(function () {
+    //   window.scrollTo(0, 1);
+    // })
+
+    let newTweetValue = $('#tweet-text').val();
 
     const newTweet = $newTweet.serialize();
+
+    $('#tweet-form')[0].reset();
     
     $('.error').hide();
 
     if (newTweetValue === '') {
-      $('.error').text("Your tweet is empty, please add some text before tweeting.")
+      $('.error').text("Your tweet is empty, please add some text before tweeting.");
       $('.error').slideDown();
     } else if (newTweetValue.length > 140) {
-      $('.error').text("Your tweet is too long, please respect the totally nonsensical character limit.")
+      $('.error').text("Your tweet is too long, please respect the totally nonsensical character limit.");
       $('.error').slideDown();
     } else {
-    $.post('/tweets/', newTweet)
-      .then(loadTweets());
+      $.post('/tweets/', newTweet)
+        .then(loadTweets())
     }
   });
 

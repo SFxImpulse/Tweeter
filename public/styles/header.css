@@ -1,4 +1,4 @@
-body div header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,4 +7,15 @@ body div header {
   background-color: #5fdb2e;
   background-image: url('../images/black-orchid.png');
   padding-top: 6em;
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    width: 33.3%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }  
 }
